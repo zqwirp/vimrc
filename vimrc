@@ -116,7 +116,7 @@ let g:UltiSnipsListSnippets="<C-Tab>"
 let g:UltiSnipsEditSplit="vertical"
 
 "" Yggdroot/indentLine
-"let g:indentLine_enabled=0
+let g:indentLine_enabled=0
 
 "" mattn/emmet-vim
 let g:user_emmet_install_global = 0
