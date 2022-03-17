@@ -38,9 +38,11 @@ set nowrap
 set showcmd
 set backspace=indent,eol,start
 set pastetoggle=<F3>
-"set autochdir
-"set linebreak
+" set autochdir
+" set linebreak
 set cursorline
+set mouse-=a
+" set showtabline=0
 
 " Indent settings
 set tabstop=2
@@ -76,36 +78,10 @@ no <Leader>i :IndentLinesToggle<CR>
 no <Leader>d :difft<CR>
 no <Leader>f :diffo!<CR>
 no <Leader>c :colorscheme 
-no <F9> :NERDTreeToggle<CR>
-no <F8> :NERDTreeFocus<CR>
-let g:user_emmet_leader_key='<C-z>'
+no <F8> :NERDTreeToggle<CR>
+no <F9> :NERDTreeFocus<CR>
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-
-" Hardmode
-set mouse-=a
-no <Up> <nop>
-no <Down> <nop>
-no <Left> <nop>
-no <Right> <nop>
-no <Home> <nop>
-no <PageUp> <nop>
-no <PageDown> <nop>
-no <End> <nop>
-no <S-Up> <nop>
-no <S-Down> <nop>
-ino <Up> <nop>
-ino <Down> <nop>
-ino <Left> <nop>
-ino <Right> <nop>
-ino <Home> <nop>
-ino <PageUp> <nop>
-ino <PageDown> <nop>
-ino <End> <nop>
-ino <S-Up> <nop>
-ino <S-Down> <nop>
-ino <Delete> <nop>
-ino <C-l> <nop>
 
 "" Prettier
 let g:prettier#config#arrow_parens="avoid"
