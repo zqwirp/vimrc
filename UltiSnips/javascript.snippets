@@ -1,61 +1,73 @@
-snippet el "add dom style" i
-$2.addEventListener("$3", ($4) => {$5})${1:;}
-endsnippet
-snippet gi "get element by id" i
-${1:document}.getElementById("$2")
-endsnippet
-snippet gc "get elements by class" i
-${1:document}.getElementsByClassName("$2")
-endsnippet
-snippet gt "get elements by tag" i
-${1:document}.getElementsByTagName("$2")
-endsnippet
-snippet qs "query selector" i
-${1:document}.querySelector("$2")
-endsnippet
-snippet qsa "query selector all" i
-${1:document}.querySelectorAll("$2")
-endsnippet
-snippet ce "create element" i
-${1:document}.createElement("$2")
-endsnippet
-snippet st "add dom style" b
-$1.style.$2 = "$3"
-endsnippet
 snippet cl "log" i
 console.log($1)
 endsnippet
-
-snippet req "require module nodejs" b
-const $1 = require($2);
+snippet elif "else if" i
+else if ($1) {
+  $2
+}
 endsnippet
+snippet for "for loop" i
+for ($1) {
+  $2
+}
+endsnippet
+snippet to "settimout" i
+setTimeout(() => $2, $1)
+endsnippet
+
+snippet gett "get by tag name" i
+${1:document}.getElementsByTagName($2)
+endsnippet
+snippet el "add dom style" i
+$1.addEventListener($2, $3)
+endsnippet
+snippet ce "create element" i
+${1:document}.createElement($2)
+endsnippet
+snippet pd "prevent default" i
+$1.preventDefault()
+endsnippet
+snippet domst "add dom style" i
+$1.style.$2 = $3
+endsnippet
+snippet domit "dom inner text" i
+$1.innerText = $2
+endsnippet
+snippet domcl "dom class list" i
+$1.classList.$2 = $3
+endsnippet
+snippet clsl "class list" i
+$1.classList.$2($3)
+endsnippet
+
 snippet im "import module es6" b
 import $2 from "$1";
 endsnippet
 snippet ffc "react function component" b
-export default function ${1:Component}($4) {
+export default function ${1:Component}($2) {
   return (
-    ${2:<>
-      ${3:Component}
+    ${3:<>
+      ${4:Component}
     </>}
   );
 }
 endsnippet
 snippet sfc "react stateless function component (arrow function)" b
-export default const ${1:Component} = ($4) => {
+export default const ${1:Component} = ($2) => {
   return (
-    ${2:<>
-      ${3:Component}
+    ${3:<>
+      ${4:Component}
     </>}
+  );
 }
-endsnippet
-snippet effect "react hook useEffect" i
-useEffect(() => {
-  $3
-}, ${1:[$2]})
 endsnippet
 snippet frag "react fragment" b
 <>
   $1
 </>
+endsnippet
+snippet odiv "outer div" b
+<div className=$1>
+  $2
+</div>
 endsnippet

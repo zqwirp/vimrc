@@ -52,3 +52,6 @@
 [submodule "pack/syntax/start/vim-prettier"]
 	path = pack/syntax/start/vim-prettier
 	url = https://github.com/prettier/vim-prettier.git
+[submodule "pack/syntax/start/vim-markdown"]
+	path = pack/syntax/start/vim-markdown
+	url = https://github.com/preservim/vim-markdown.git
