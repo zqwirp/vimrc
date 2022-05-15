@@ -55,3 +55,6 @@
 [submodule "pack/syntax/start/vim-markdown"]
 	path = pack/syntax/start/vim-markdown
 	url = https://github.com/preservim/vim-markdown.git
+[submodule "pack/syntax/start/typescript-vim"]
+	path = pack/syntax/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git

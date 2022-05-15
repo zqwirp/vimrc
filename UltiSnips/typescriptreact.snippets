@@ -14,12 +14,6 @@ endsnippet
 snippet to "settimout" i
 setTimeout(() => $2, $1)
 endsnippet
-snippet pi "parse integer" i
-parseInt($1)
-endsnippet
-snippet pf "parse float" i
-parseFloat($1)
-endsnippet
 
 snippet gett "get by tag name" i
 ${1:document}.getElementsByTagName($2)
@@ -40,6 +34,9 @@ snippet domit "dom inner text" i
 $1.innerText = $2
 endsnippet
 snippet domcl "dom class list" i
+$1.classList.$2 = $3
+endsnippet
+snippet clsl "class list" i
 $1.classList.$2($3)
 endsnippet
 

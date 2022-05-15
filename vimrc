@@ -35,6 +35,7 @@ set number
 set wildmenu
 set showmatch
 set nowrap
+au FileType markdown set wrap
 set showcmd
 set backspace=indent,eol,start
 set pastetoggle=<F3>
@@ -73,11 +74,12 @@ set splitbelow
 no <Leader><Esc> :noh<CR>
 no <Leader>n :bn<CR>
 no <Leader>b :bp<CR>
-no <Leader>l :ls<CR>:b 
+no <Leader>l :ls<CR>
 no <Leader>i :IndentLinesToggle<CR>
 no <Leader>d :difft<CR>
 no <Leader>f :diffo!<CR>
 no <Leader>c :colorscheme 
+no <Leader>v :vert sb 
 no <F8> :NERDTreeToggle<CR>
 no <F9> :NERDTreeFocus<CR>
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
@@ -96,7 +98,7 @@ let g:indentLine_enabled=0
 
 "" mattn/emmet-vim
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,scss,php,javascript EmmetInstall
+autocmd FileType html,css,scss,php,javascript,typescript EmmetInstall
 
 "" Raimondi/delimitMate
 let g:delimitMate_expand_cr=1
