@@ -83,6 +83,7 @@ no <F8> :NERDTreeToggle<CR>
 no <F9> :NERDTreeFocus<CR>
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+cabbrev vsb vert sb
 
 "" Prettier
 let g:prettier#config#arrow_parens="avoid"
