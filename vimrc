@@ -1,36 +1,37 @@
-" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
-" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing archlinux.vim since it alters the value of the
-" 'compatible' option.
-
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages.
-runtime! archlinux.vim
-
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim80/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
-
-" do not load defaults if ~/.vimrc is missing
-let skip_defaults_vim=1
-
 " Important default settings
 set nocompatible
+set encoding=utf-8
 syntax enable
 filetype plugin on
 filetype plugin indent on
+
+call plug#begin()
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sensible'
+Plug 'airblade/vim-gitgutter'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim'
+Plug 'preservim/nerdtree'
+Plug 'nanotech/jellybeans.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'Yggdroot/indentLine'
+Plug 'leafgarland/typescript-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-haml'
+Plug 'preservim/vim-markdown'
+Plug 'prettier/vim-prettier'
+call plug#end()
+
 colorscheme jellybeans
 set background=dark
 set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 
 
 " Important ettings
-set encoding=utf-8
 set number
 set wildmenu
 set showmatch
@@ -81,28 +82,61 @@ no <Leader>c :colorscheme
 no <Leader>v :vert sb 
 no <F8> :NERDTreeToggle<CR>
 no <F9> :NERDTreeFocus<CR>
-let g:UltiSnipsJumpForwardTrigger="<C-j>"
-let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+let g:UltiSnipsJumpForwardTrigger = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 cabbrev vsb vert sb
 
 "" Prettier
-let g:prettier#config#arrow_parens="avoid"
+let g:prettier#config#arrow_parens = "avoid"
 
 "" SirVer/ultisnips
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsListSnippets="<C-Tab>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = "<Tab>"
+let g:UltiSnipsListSnippets = "<C-Tab>"
+let g:UltiSnipsEditSplit = "vertical"
 
 "" Yggdroot/indentLine
-let g:indentLine_enabled=0
+let g:indentLine_enabled = 0
 
 "" mattn/emmet-vim
-let g:user_emmet_install_global=0
+let g:user_emmet_install_global = 0
 autocmd FileType html,css,scss,php,javascript,typescriptreact EmmetInstall
 
 "" Raimondi/delimitMate
-let g:delimitMate_expand_cr=1
-let g:delimitMate_expand_space=1
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
 
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled = 1
 au FileType markdown set wrap
+
+" let g:lightline = {
+"       \ 'colorscheme': 'jellybeans',
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'readonly', 'filename', 'gitbranch', 'modified' ] ],
+"       \ 'right': [ [ 'lineinfo' ],
+"       \              [ 'percent' ],
+"       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+"       \ },
+"       \ 'component_function': {
+"       \   'gitbranch': 'FugitiveHead'
+"       \ },
+"       \ 'mode_map': {
+"       \ 'n' : 'N',
+"       \ 'i' : 'I',
+"       \ 'R' : 'R',
+"       \ 'v' : 'V',
+"       \ 'V' : 'VL',
+"       \ "\<C-v>": 'VB',
+"       \ 'c' : 'C',
+"       \ 's' : 'S',
+"       \ 'S' : 'SL',
+"       \ "\<C-s>": 'SB',
+"       \ 't': 'T',
+"       \ },
+"       \ }
+
+"airline
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
