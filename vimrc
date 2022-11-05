@@ -93,7 +93,7 @@ let g:prettier#config#arrow_parens = "avoid"
 
 "mattn/emmet-vim
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,php,javascript EmmetInstall
+autocmd FileType html,css,php,javascript,vue EmmetInstall
 
 " ale
 let g:ale_enabled = 0
