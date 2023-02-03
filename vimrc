@@ -10,9 +10,12 @@ Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
 
 Plug 'mattn/emmet-vim'
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', {
+			\'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'fatih/vim-go'
 
@@ -43,11 +46,11 @@ set wildmenu
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 if ($TERM == "st-256color")
-  colorscheme jellybeans
-  set background=dark
-  set termguicolors
-  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+	colorscheme jellybeans
+	set background=dark
+	set termguicolors
+	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
 set shiftround
@@ -69,18 +72,25 @@ set noswapfile
 set viminfo="999,n~/.vim/viminfo
 
 set pastetoggle=<F3>
+cabbrev vsb vert sb
+
 no <Leader><Esc> :noh<CR>
 no <Leader>n :bn<CR>
 no <Leader>b :bp<CR>
 no <Leader>l :ls<CR>
 no <Leader>i :IndentLinesToggle<CR>
-cabbrev vsb vert sb
+
+autocmd FileType go no <buffer> <Leader>p :GoFmt<CR>
+" autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue no <buffer> <Leader>p :Prettier<CR>
 
 " autocmd FileType sass,scss set filetype=css
 " autocmd FileType javascriptreact,typescriptreact,vue set filetype=javascript
 
 "prettier/vim-prettier
 let g:prettier#config#arrow_parens="avoid"
+
+"preservim/nerdtree
+no <F9> :NERDTreeToggle<CR>
 
 "mattn/emmet-vim
 let g:user_emmet_install_global=0
