@@ -76,35 +76,35 @@ no <Leader>l :ls<CR>
 no <Leader>i :IndentLinesToggle<CR>
 cabbrev vsb vert sb
 
-autocmd FileType sass,scss set filetype=css
+" autocmd FileType sass,scss set filetype=css
 " autocmd FileType javascriptreact,typescriptreact,vue set filetype=javascript
 
-"" prettier/vim-prettier
-let g:prettier#config#arrow_parens = "avoid"
+"prettier/vim-prettier
+let g:prettier#config#arrow_parens="avoid"
 
-""mattn/emmet-vim
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,php,javascript,vue EmmetInstall
+"mattn/emmet-vim
+let g:user_emmet_install_global=0
+autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue EmmetInstall
 
-""dense-analysis/ale
+"dense-analysis/ale
 let g:ale_enabled=0
 let b:ale_linters=["eslint"]
 let g:ale_linters_explicit=1
 " let g:ale_lint_delay = 1000
 " let g:ale_lint_on_text_changed="insert"
-let g:ale_lint_on_enter = 0
+let g:ale_lint_on_enter=0
 
-""SirVer/ultisnips
+"SirVer/ultisnips
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsListSnippets="<C-Tab>"
 let g:UltiSnipsEditSplit="vertical"
 
-""Yggdroot/indentLine
+"Yggdroot/indentLine
 let g:indentLine_enabled=0
 
-""Raimondi/delimitMate
+"Raimondi/delimitMate
 let g:delimitMate_expand_cr=1
 let g:delimitMate_expand_space=1
 
