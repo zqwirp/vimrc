@@ -11,7 +11,10 @@ Plug 'Raimondi/delimitMate'
 
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', {
-			\'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html']}
+			\'for': [
+			\'javascript', 'typescript', 'css', 'less', 'scss', 'sass',
+			\'json', 'vue', 'svelte', 'yaml', 'html'
+			\]}
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
 Plug 'sheerun/vim-polyglot'
@@ -117,5 +120,8 @@ let g:indentLine_enabled=0
 " Raimondi/delimitMate
 let g:delimitMate_expand_cr=1
 let g:delimitMate_expand_space=1
+
+" preservim/vim-markdown
+let g:vim_markdown_folding_disabled = 1
 
 "" vim: ts=2 sts=2 sw=2 et
