@@ -91,6 +91,7 @@ autocmd FileType go no <buffer> <Leader>p :GoFmt<CR>
 
 " prettier/vim-prettier
 let g:prettier#config#arrow_parens="avoid"
+let g:prettier#config#jsx_single_quote="true"
 
 " preservim/nerdtree
 no <F9> :NERDTreeToggle<CR>
