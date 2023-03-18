@@ -14,3 +14,7 @@ link js, jsx ftplugin
 ```
 ln -s ./ftplugin/javascriptreact.vim ./ftplugin/javascript.vim
 ```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
