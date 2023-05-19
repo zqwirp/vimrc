@@ -2,9 +2,9 @@
 
 ## Plugin Manager
 
-run `init.sh`:
+run [`init.sh`](init.sh):
 
-- install `vim-plug`
+- install [`vim-plug`](https://github.com/junegunn/vim-plug#unix)
 - link js, jsx ftplugin
 
 ## License
