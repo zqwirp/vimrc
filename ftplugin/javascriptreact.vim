@@ -1,1 +1,1 @@
-javascript.vim
+./ftplugin/javascript.vim
