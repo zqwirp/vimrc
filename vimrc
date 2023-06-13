@@ -8,6 +8,7 @@ Plug 'SirVer/ultisnips'
 Plug 'preservim/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
+Plug 'mg979/vim-visual-multi'
 
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', {
@@ -21,6 +22,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'leafgarland/typescript-vim'
 
 Plug 'fatih/vim-go'
+
+Plug 'rhysd/vim-clang-format'
 
 Plug 'preservim/vim-markdown'
 
