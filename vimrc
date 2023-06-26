@@ -87,6 +87,7 @@ no <Leader>l :ls<CR>
 no <Leader>i :IndentLinesToggle<CR>
 
 autocmd FileType go no <buffer> <Leader>p :GoFmt<CR>
+autocmd FileType c,h no <buffer> <Leader>p :ClangFormat<CR>
 " autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue no <buffer> <Leader>p :Prettier<CR>
 
 " autocmd FileType sass,scss set filetype=css
