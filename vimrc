@@ -1,4 +1,5 @@
 call plug#begin()
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -11,15 +12,21 @@ Plug 'Raimondi/delimitMate'
 Plug 'mg979/vim-visual-multi'
 
 Plug 'mattn/emmet-vim'
+
+" prettier 'for' load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
 			\'for': [
 			\'javascript', 'typescript', 'css', 'less', 'scss', 'sass',
 			\'json', 'vue', 'svelte', 'yaml', 'html'
 			\]}
+
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
 Plug 'sheerun/vim-polyglot'
-Plug 'leafgarland/typescript-vim'
+
+" no need to use this plugin
+" because already use yats embedded in vim-polyglot
+" Plug 'leafgarland/typescript-vim'
 
 Plug 'fatih/vim-go'
 
@@ -88,45 +95,59 @@ no <Leader>i :IndentLinesToggle<CR>
 
 autocmd FileType go no <buffer> <Leader>p :GoFmt<CR>
 autocmd FileType c,h no <buffer> <Leader>p :ClangFormat<CR>
+
+" no need for this command below
+" because prettier already configured to load for certain filetype
 " autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue no <buffer> <Leader>p :Prettier<CR>
 
 " autocmd FileType sass,scss set filetype=css
 " autocmd FileType javascriptreact,typescriptreact,vue set filetype=javascript
 
 " prettier/vim-prettier
-let g:prettier#config#arrow_parens="avoid"
-let g:prettier#config#jsx_single_quote="true"
+let g:prettier#config#print_width = "80"
+let g:prettier#config#tab_width = "2"
+let g:prettier#config#semi = "true"
+let g:prettier#config#single_quote = "false"
+let g:prettier#config#jsx_single_quote = "true"
+let g:prettier#config#trailing_comma = "es5"
+let g:prettier#config#bracket_spacing = "true"
+let g:prettier#config#bracket_same_line = "false"
+let g:prettier#config#arrow_parens = "avoid"
 
 " preservim/nerdtree
 no <F9> :NERDTreeToggle<CR>
 
 " mattn/emmet-vim
-let g:user_emmet_install_global=0
+let g:user_emmet_install_global = 0
 autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue EmmetInstall
 
 " dense-analysis/ale
-let g:ale_enabled=0
+let g:ale_enabled = 0
 " Only run linters named in ale_linters settings.
-let g:ale_linters_explicit=1 
+let g:ale_linters_explicit = 1 
 " let g:ale_lint_delay = 1000
 " let g:ale_lint_on_text_changed="insert"
 " let g:ale_lint_on_enter=0
 
 " SirVer/ultisnips
-let g:UltiSnipsJumpForwardTrigger="<C-j>"
-let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsListSnippets="<C-Tab>"
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsJumpForwardTrigger = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
+let g:UltiSnipsExpandTrigger = "<Tab>"
+let g:UltiSnipsListSnippets = "<C-Tab>"
+let g:UltiSnipsEditSplit = "vertical"
 
 " Yggdroot/indentLine
-let g:indentLine_enabled=0
+let g:indentLine_enabled = 0
 
 " Raimondi/delimitMate
-let g:delimitMate_expand_cr=1
-let g:delimitMate_expand_space=1
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
 
 " preservim/vim-markdown
 let g:vim_markdown_folding_disabled = 1
+
+" leafgarland/typescript-vim
+" disable plugin custom indenter 
+" let g:typescript_indent_disable = 1
 
 "" vim: ts=2 sts=2 sw=2 et
