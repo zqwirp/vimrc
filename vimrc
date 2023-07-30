@@ -24,8 +24,7 @@ Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
 Plug 'sheerun/vim-polyglot'
 
-" no need to use this plugin
-" because already use yats embedded in vim-polyglot
+" no need to use this plugin because already use yats embedded in vim-polyglot
 " Plug 'leafgarland/typescript-vim'
 
 Plug 'fatih/vim-go'
@@ -96,8 +95,7 @@ no <Leader>i :IndentLinesToggle<CR>
 autocmd FileType go no <buffer> <Leader>p :GoFmt<CR>
 autocmd FileType c,h no <buffer> <Leader>p :ClangFormat<CR>
 
-" no need for this command below
-" because prettier already configured to load for certain filetype
+" no need for this command below because prettier already configured to load for certain filetype
 " autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue no <buffer> <Leader>p :Prettier<CR>
 
 " autocmd FileType sass,scss set filetype=css
@@ -122,12 +120,17 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue EmmetInstall
 
 " dense-analysis/ale
+" The recommended way to configure linters is to define a List in an ftplugin file.
+let b:ale_linters = {'javascript': ['eslint']}
+" Disable ALE by default, set 0
 let g:ale_enabled = 0
-" Only run linters named in ale_linters settings.
+" prevent ALE to run anything other than what you've explicitly asked for, set 1
 let g:ale_linters_explicit = 1 
-" let g:ale_lint_delay = 1000
+" ALE uses a timeout which is cancelled and reset every time you type
+let g:ale_lint_delay = 2000
 " let g:ale_lint_on_text_changed="insert"
-" let g:ale_lint_on_enter=0
+" When this option is set to `1`, the |BufWinEnter| event will be used to apply linters when buffers are first opened. If this is not desired, this variable can be set to `0` in your vimrc file to disable this behavior.
+" let g:ale_lint_on_enter = 0
 
 " SirVer/ultisnips
 let g:UltiSnipsJumpForwardTrigger = "<C-j>"
