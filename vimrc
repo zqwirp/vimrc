@@ -102,55 +102,50 @@ autocmd FileType c,h no <buffer> <Leader>p :ClangFormat<CR>
 " autocmd FileType javascriptreact,typescriptreact,vue set filetype=javascript
 
 " prettier/vim-prettier
-let g:prettier#config#print_width = "80"
-let g:prettier#config#tab_width = "2"
-let g:prettier#config#semi = "true"
-let g:prettier#config#single_quote = "false"
-let g:prettier#config#jsx_single_quote = "true"
-let g:prettier#config#trailing_comma = "es5"
-let g:prettier#config#bracket_spacing = "true"
-let g:prettier#config#bracket_same_line = "false"
-let g:prettier#config#arrow_parens = "avoid"
+let g:prettier#config#print_width="80"
+let g:prettier#config#tab_width="2"
+let g:prettier#config#semi="true"
+let g:prettier#config#single_quote="false"
+let g:prettier#config#jsx_single_quote="true"
+let g:prettier#config#trailing_comma="es5"
+let g:prettier#config#bracket_spacing="true"
+let g:prettier#config#bracket_same_line="false"
+let g:prettier#config#arrow_parens="avoid"
 
 " preservim/nerdtree
 no <F9> :NERDTreeToggle<CR>
 
 " mattn/emmet-vim
-let g:user_emmet_install_global = 0
+let g:user_emmet_install_global=0
 autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue EmmetInstall
 
 " dense-analysis/ale
-" The recommended way to configure linters is to define a List in an ftplugin file.
-let b:ale_linters = {'javascript': ['eslint']}
-" Disable ALE by default, set 0
-let g:ale_enabled = 0
-" prevent ALE to run anything other than what you've explicitly asked for, set 1
-let g:ale_linters_explicit = 1 
-" ALE uses a timeout which is cancelled and reset every time you type
-let g:ale_lint_delay = 2000
+let b:ale_linters={'javascript': ['eslint']} " The recommended way to configure linters is to define a List in an ftplugin file
+let g:ale_enabled=0 " Disable ALE by default, set 0
+let g:ale_linters_explicit=1 " prevent ALE to run anything other than what you've explicitly asked for, set 1
+let g:ale_lint_delay=2000 " ALE uses a timeout which is cancelled and reset every time you type
 " let g:ale_lint_on_text_changed="insert"
-" When this option is set to `1`, the |BufWinEnter| event will be used to apply linters when buffers are first opened. If this is not desired, this variable can be set to `0` in your vimrc file to disable this behavior.
-" let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_enter=0 " When this option is set to `1`, the BufWinEnter event will be used to apply linters when buffers are first opened. If this is not desired, this variable can be set to `0` in your vimrc file to disable this behavior.
 
 " SirVer/ultisnips
-let g:UltiSnipsJumpForwardTrigger = "<C-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
-let g:UltiSnipsExpandTrigger = "<Tab>"
-let g:UltiSnipsListSnippets = "<C-Tab>"
-let g:UltiSnipsEditSplit = "vertical"
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsListSnippets="<C-Tab>"
+let g:UltiSnipsEditSplit="vertical"
 
 " Yggdroot/indentLine
-let g:indentLine_enabled = 0
+let g:indentLine_enabled=0
 
 " Raimondi/delimitMate
-let g:delimitMate_expand_cr = 1
-let g:delimitMate_expand_space = 1
+let g:delimitMate_expand_cr=1
+let g:delimitMate_expand_space=1
 
 " preservim/vim-markdown
-let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled=1
 
 " leafgarland/typescript-vim
 " disable plugin custom indenter 
-" let g:typescript_indent_disable = 1
+" let g:typescript_indent_disable=1
 
 "" vim: ts=2 sts=2 sw=2 et
