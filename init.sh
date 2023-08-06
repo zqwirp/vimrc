@@ -8,4 +8,5 @@ else
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+rm ./ftplugin/javascriptreact.vim
 ln -s ./ftplugin/javascript.vim ./ftplugin/javascriptreact.vim

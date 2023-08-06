@@ -15,10 +15,8 @@ Plug 'mattn/emmet-vim'
 
 " prettier 'for' load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
-			\'for': [
-			\'javascript', 'typescript', 'css', 'less', 'scss', 'sass',
-			\'json', 'vue', 'svelte', 'yaml', 'html'
-			\]}
+			\'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'sass',
+			\'json', 'vue', 'svelte', 'yaml', 'html'] }
 
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
@@ -102,15 +100,15 @@ autocmd FileType c,h no <buffer> <Leader>p :ClangFormat<CR>
 " autocmd FileType javascriptreact,typescriptreact,vue set filetype=javascript
 
 " prettier/vim-prettier
-let g:prettier#config#print_width="80"
-let g:prettier#config#tab_width="2"
-let g:prettier#config#semi="true"
-let g:prettier#config#single_quote="false"
-let g:prettier#config#jsx_single_quote="true"
-let g:prettier#config#trailing_comma="es5"
-let g:prettier#config#bracket_spacing="true"
-let g:prettier#config#bracket_same_line="false"
-let g:prettier#config#arrow_parens="avoid"
+" let g:prettier#config#print_width="80"
+" let g:prettier#config#tab_width="2"
+" let g:prettier#config#semi="true"
+" let g:prettier#config#single_quote="false"
+" let g:prettier#config#jsx_single_quote="true"
+" let g:prettier#config#trailing_comma="es5"
+" let g:prettier#config#bracket_spacing="true"
+" let g:prettier#config#bracket_same_line="false"
+" let g:prettier#config#arrow_parens="avoid"
 
 " preservim/nerdtree
 no <F9> :NERDTreeToggle<CR>
@@ -120,7 +118,6 @@ let g:user_emmet_install_global=0
 autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue EmmetInstall
 
 " dense-analysis/ale
-let b:ale_linters={'javascript': ['eslint']} " The recommended way to configure linters is to define a List in an ftplugin file
 let g:ale_enabled=0 " Disable ALE by default, set 0
 let g:ale_linters_explicit=1 " prevent ALE to run anything other than what you've explicitly asked for, set 1
 let g:ale_lint_delay=2000 " ALE uses a timeout which is cancelled and reset every time you type
