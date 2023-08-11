@@ -14,9 +14,7 @@ Plug 'mg979/vim-visual-multi'
 Plug 'mattn/emmet-vim'
 
 " prettier 'for' load plugin only for editing supported files
-Plug 'prettier/vim-prettier', {
-			\'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'sass',
-			\'json', 'vue', 'svelte', 'yaml', 'html'] }
+Plug 'prettier/vim-prettier'
 
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
@@ -55,13 +53,9 @@ set wildmenu
 " set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-if ($TERM == "st-256color")
-	colorscheme jellybeans
-	set background=dark
-	set termguicolors
-	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-endif
+colorscheme jellybeans
+set background=dark
+set termguicolors
 
 set shiftround
 set autoindent
@@ -100,22 +94,22 @@ autocmd FileType c,h no <buffer> <Leader>p :ClangFormat<CR>
 " autocmd FileType javascriptreact,typescriptreact,vue set filetype=javascript
 
 " prettier/vim-prettier
-" let g:prettier#config#print_width="80"
-" let g:prettier#config#tab_width="2"
-" let g:prettier#config#semi="true"
-" let g:prettier#config#single_quote="false"
-" let g:prettier#config#jsx_single_quote="true"
-" let g:prettier#config#trailing_comma="es5"
-" let g:prettier#config#bracket_spacing="true"
-" let g:prettier#config#bracket_same_line="false"
-" let g:prettier#config#arrow_parens="avoid"
+let g:prettier#config#print_width="80"
+let g:prettier#config#tab_width="2"
+let g:prettier#config#semi="true"
+let g:prettier#config#single_quote="false"
+let g:prettier#config#jsx_single_quote="true"
+let g:prettier#config#trailing_comma="es5"
+let g:prettier#config#bracket_spacing="true"
+let g:prettier#config#bracket_same_line="true"
+let g:prettier#config#arrow_parens="avoid"
 
 " preservim/nerdtree
 no <F9> :NERDTreeToggle<CR>
 
 " mattn/emmet-vim
 let g:user_emmet_install_global=0
-autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue EmmetInstall
+autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,typescript,typescriptreact,vue EmmetInstall
 
 " dense-analysis/ale
 let g:ale_enabled=0 " Disable ALE by default, set 0
@@ -140,6 +134,10 @@ let g:delimitMate_expand_space=1
 
 " preservim/vim-markdown
 let g:vim_markdown_folding_disabled=1
+
+let g:clang_format#style_options = {
+	\ "ColumnLimit" : 0,
+	\ "ReflowComments" : "false"}
 
 " leafgarland/typescript-vim
 " disable plugin custom indenter 
