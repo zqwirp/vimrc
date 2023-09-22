@@ -53,7 +53,7 @@ set wildmenu
 " set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-colorscheme jellybeans
+silent! colorscheme jellybeans
 set background=dark
 set termguicolors
 
