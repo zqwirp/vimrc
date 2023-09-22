@@ -109,7 +109,9 @@ no <F9> :NERDTreeToggle<CR>
 
 " mattn/emmet-vim
 let g:user_emmet_install_global=0
-autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,typescript,typescriptreact,vue EmmetInstall
+autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,typescript,typescriptreact,vue,ejs EmmetInstall
+" au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.ejs setfiletype html
 
 " dense-analysis/ale
 let g:ale_enabled=0 " Disable ALE by default, set 0
