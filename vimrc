@@ -88,7 +88,7 @@ autocmd FileType go no <buffer> <Leader>p :GoFmt<CR>
 autocmd FileType c,h no <buffer> <Leader>p :ClangFormat<CR>
 
 " no need for this command below because prettier already configured to load for certain filetype
-" autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue no <buffer> <Leader>p :Prettier<CR>
+autocmd FileType html,css,sass,scss,php,javascript,javascriptreact,vue no <buffer> <Leader>p :Prettier<CR>
 
 " autocmd FileType sass,scss set filetype=css
 " autocmd FileType javascriptreact,typescriptreact,vue set filetype=javascript
