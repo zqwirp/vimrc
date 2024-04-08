@@ -1,4 +1,4 @@
-set nocompatible "event though it's already set in archlinux.vim
+set nocompatible "event though it"s already set in archlinux.vim
 set encoding=utf-8
 
 syntax enable
@@ -42,24 +42,13 @@ set viminfo="999,n~/.vim/viminfo
 
 set pastetoggle=<F3>
 cabbrev vsb vert sb
-cabbrev som source $MYVIMRC
 
-no <Leader><Esc> :noh<CR>
-no <Leader>n :bn<CR>
-no <Leader>b :bp<CR>
-no <Leader>l :ls<CR>
-
-" augroup PrettierMappings
-"   autocmd FileType html,css,json,sass,scss,php,javascriptreact,typescriptreact,vue no <buffer> <Leader>p :Prettier<CR>
-" augroup END
-
-let vim_prettier=$HOME . "/.vim/pack/formatter/opt/vim-prettier/autoload/prettier.vim"
-if filereadable(expand(vim_prettier))
-	augroup vim_prettier_group
-		au!
-		autocmd FileType html,css,json,sass,scss,php,javascriptreact,typescriptreact,vue :packadd vim-prettier
-	augroup END
-endif
+nnoremap <Leader><Esc> :noh<CR>
+nnoremap <Leader>n :bn<CR>
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>l :ls<CR>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ev :e $HOME/.vim/vimrc<cr>
 
 " Raimondi/delimitMate
 let delimitMate_path=$HOME . "/.vim/pack/completion/start/delimitMate/autoload/delimitMate.vim"
@@ -69,7 +58,7 @@ if filereadable(expand(delimitMate_path))
 endif
 
 " rhysd/vim-clang-format
-let vim_clang_format="~/.vim/pack/completion/start/vim-clang-format/autoload/clang_format.vim"
+let vim_clang_format="~/.vim/pack/completion/opt/vim-clang-format/autoload/clang_format.vim"
 if filereadable(expand(vim_clang_format))
 	let g:clang_format#style_options={
 				\ "ColumnLimit" : 0,
@@ -78,4 +67,19 @@ if filereadable(expand(vim_clang_format))
 endif
 
 " Yggdroot/indentLine
-let g:indentLine_enabled=0
+" let g:indentLine_enabled=0
+
+""""""""""""""""""""""""""""""
+" TRASH
+""""""""""""""""""""""""""""""
+" augroup PrettierMappings
+"   autocmd FileType html,css,json,sass,scss,php,javascriptreact,typescriptreact,vue no <buffer> <Leader>p :Prettier<CR>
+" augroup END
+
+" let vim_prettier=$HOME . "/.vim/pack/formatter/opt/vim-prettier/autoload/prettier.vim
+" if filereadable(expand(vim_prettier))
+" 	augroup vim_prettier_group
+" 		au!
+" 		autocmd FileType html,css,json,sass,scss,php,javascriptreact,typescriptreact,vue :packadd vim-prettier
+" 	augroup END
+" endif
