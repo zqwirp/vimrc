@@ -1,10 +1,43 @@
+" VIM-PLUG BOOTSTRAP
+let data_dir = '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" INITIALIZE PLUGIN WITH VIM-PLUG
+call plug#begin()
+Plug 'nanotech/jellybeans.vim'
+Plug 'dstein64/vim-startuptime', { 'on': 'StartupTime' }
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive', { 'on': 'Git' }
+Plug 'airblade/vim-gitgutter'
+Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesToggle' }
+
+Plug 'Raimondi/delimitMate'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+
+Plug 'prettier/vim-prettier', {
+			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html'],
+			\ 'on': 'Prettier'
+			\ }
+Plug 'pangloss/vim-javascript', {
+			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html']
+			\ }
+Plug 'rhysd/vim-clang-format', {
+			\ 'for': ['c', 'cpp', 'objc']
+			\ }
+call plug#end()
+
 set nocompatible "event though it"s already set in archlinux.vim
 set encoding=utf-8
 
 syntax enable
 filetype plugin indent on
 
-set number
+" set number
+" set relativenumber
+set numberwidth=1
 set nowrap
 set mouse-=a
 set cursorline
@@ -41,45 +74,12 @@ set noswapfile
 set viminfo="999,n~/.vim/viminfo
 
 set pastetoggle=<F3>
+
 cabbrev vsb vert sb
+cabbrev evc e $HOME/.vim/vimrc
+cabbrev som source $MYVIMRC
 
 nnoremap <Leader><Esc> :noh<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>l :ls<CR>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>ev :e $HOME/.vim/vimrc<cr>
 
-" Raimondi/delimitMate
-let delimitMate_path=$HOME . "/.vim/pack/completion/start/delimitMate/autoload/delimitMate.vim"
-if filereadable(expand(delimitMate_path))
-	let g:delimitMate_expand_cr=1
-	let g:delimitMate_expand_space=1
-endif
-
-" rhysd/vim-clang-format
-let vim_clang_format="~/.vim/pack/completion/opt/vim-clang-format/autoload/clang_format.vim"
-if filereadable(expand(vim_clang_format))
-	let g:clang_format#style_options={
-				\ "ColumnLimit" : 0,
-				\ "ReflowComments" : "false"
-				\ }
-endif
-
-" Yggdroot/indentLine
-" let g:indentLine_enabled=0
-
-""""""""""""""""""""""""""""""
-" TRASH
-""""""""""""""""""""""""""""""
-" augroup PrettierMappings
-"   autocmd FileType html,css,json,sass,scss,php,javascriptreact,typescriptreact,vue no <buffer> <Leader>p :Prettier<CR>
-" augroup END
-
-" let vim_prettier=$HOME . "/.vim/pack/formatter/opt/vim-prettier/autoload/prettier.vim
-" if filereadable(expand(vim_prettier))
-" 	augroup vim_prettier_group
-" 		au!
-" 		autocmd FileType html,css,json,sass,scss,php,javascriptreact,typescriptreact,vue :packadd vim-prettier
-" 	augroup END
-" endif
