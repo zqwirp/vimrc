@@ -1,35 +1,45 @@
 " VIM-PLUG BOOTSTRAP
 let data_dir = '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-	silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " INITIALIZE PLUGIN WITH VIM-PLUG
 call plug#begin()
-Plug 'nanotech/jellybeans.vim'
-Plug 'dstein64/vim-startuptime', { 'on': 'StartupTime' }
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive', { 'on': 'Git' }
+Plug 'tpope/vim-fugitive'
+
 Plug 'airblade/vim-gitgutter'
+Plug 'dstein64/vim-startuptime', { 'on': 'StartupTime' }
 Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesToggle' }
 
 Plug 'Raimondi/delimitMate'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+
 Plug 'prettier/vim-prettier', {
-			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html'],
-			\ 'on': 'Prettier'
-			\ }
+            \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html'],
+            \ 'on': 'Prettier'
+            \ }
 Plug 'pangloss/vim-javascript', {
-			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html']
-			\ }
+            \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'svelte', 'yaml', 'html']
+            \ }
+Plug 'mattn/emmet-vim', {
+            \ 'for': ['javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'vue', 'svelte', 'html']
+            \ }
+
 Plug 'rhysd/vim-clang-format', {
-			\ 'for': ['c', 'cpp', 'objc']
-			\ }
+            \ 'for': ['c', 'cpp', 'objc']
+            \ }
+
+Plug 'fatih/vim-go', { 'for': ['go','gomod'], 'do': ':GoUpdateBinaries' }
 call plug#end()
 
-set nocompatible "event though it"s already set in archlinux.vim
+set nocompatible
 set encoding=utf-8
 
 syntax enable
@@ -50,6 +60,7 @@ colorscheme jellybeans
 set showcmd
 set showmode
 set showmatch
+set laststatus=1
 
 set wildmenu
 " set wildmode=list:longest
@@ -71,15 +82,30 @@ set splitbelow
 set nobackup
 set nowb
 set noswapfile
-set viminfo="999,n~/.vim/viminfo
+
+" set viminfo='100,<50,s10,h " DEFAULT
+set viminfo='100,<50,s10,h,n~/.vim/viminfo
 
 set pastetoggle=<F3>
 
 cabbrev vsb vert sb
-cabbrev evc e $HOME/.vim/vimrc
+cabbrev evrc e $HOME/.vim/vimrc
 cabbrev som source $MYVIMRC
+cabbrev ntt NERDTreeToggle
+cabbrev ilt IndentLinesToggle
+cabbrev sut StartupTime
+cabbrev setn set number!
 
 nnoremap <Leader><Esc> :noh<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>ls :ls<CR>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+command! ChmX execute "!chmod +x %"
+
+" vim: ts=4 sts=4 sw=4 et
 
